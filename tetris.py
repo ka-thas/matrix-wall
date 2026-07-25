@@ -154,7 +154,7 @@ class Tetris:
         self.next_queue.append(self._draw())
         self.cur_name = name
         self.cur_rot  = 0
-        self.cur_row  = 0
+        self.cur_row  = BOARD_HIDDEN
         self.cur_col  = BOARD_W // 2 - 2
         self.hold_used = False
         if not self._valid(self.cur_row, self.cur_col, self.cur_rot):
@@ -196,7 +196,7 @@ class Tetris:
         else:
             self.hold, self.cur_name = self.cur_name, self.hold
             self.cur_rot = 0
-            self.cur_row = 0
+            self.cur_row = BOARD_HIDDEN
             self.cur_col = BOARD_W // 2 - 2
         self.hold_used = True
 

@@ -19,9 +19,10 @@ CRGB tetrominoColors[] = {
 };
 
 inline int ledIndex(byte x, byte y) {
-  return (y % 2 == 0)
-    ? y * SCREEN_W + x
-    : y * SCREEN_W + (SCREEN_W - 1 - x);
+  byte mappedY = (SCREEN_H - 1) - y;
+  return (mappedY % 2 == 0)
+    ? mappedY * SCREEN_W + x
+    : mappedY * SCREEN_W + (SCREEN_W - 1 - x);
 }
 
 void setup() {
